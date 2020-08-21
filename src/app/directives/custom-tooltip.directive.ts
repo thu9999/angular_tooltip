@@ -12,15 +12,15 @@ export class CustomTooltipDirective {
     private overlayRef: OverlayRef;
 
     @HostListener( 'mouseenter' ) onMouseEnter() {
-        this.renderer.setStyle(this.elRef.nativeElement, 'cursor', 'pointer');
+        this.renderer.setStyle( this.elRef.nativeElement, 'cursor', 'pointer' );
 
         const config: OverlayConfig = new OverlayConfig();
         config.positionStrategy = this.overlay.position()
-        .flexibleConnectedTo(this.elRef)
+        .flexibleConnectedTo( this.elRef )
         .withPositions( [
             { originX: 'start', originY: 'bottom', overlayX: 'start',  overlayY: 'top', offsetY: 8 }
         ] );
-        this.overlayRef = this.overlay.create(config);
+        this.overlayRef = this.overlay.create( config );
         const componentRef = this.overlayRef.attach( new ComponentPortal( CustomTooltipComponent ) );
         componentRef.instance.content = this.customTooltipContent;
     }
