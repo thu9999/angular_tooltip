@@ -1,7 +1,7 @@
-import { Directive, Input, HostBinding, HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, Input, HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { OverlayRef, OverlayConfig, Overlay } from '@angular/cdk/overlay';
 import { CustomTooltipComponent } from '../components/custom-tooltip/custom-tooltip.component';
-import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
+import { ComponentPortal } from '@angular/cdk/portal';
 
 @Directive({
     selector: '[customTooltip]'
